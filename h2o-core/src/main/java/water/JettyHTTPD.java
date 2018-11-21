@@ -177,6 +177,8 @@ public class JettyHTTPD extends AbstractHTTPD {
     if (xhrRequest) {
       response.setHeader("Cache-Control", "no-cache");
     }
+
+    response.setHeader("Access-Control-Allow-Origin", "*");
     response.setHeader("X-h2o-build-project-version", H2O.ABV.projectVersion());
     response.setHeader("X-h2o-rest-api-version-max", Integer.toString(water.api.RequestServer.H2O_REST_API_VERSION));
     response.setHeader("X-h2o-cluster-id", Long.toString(H2O.CLUSTER_ID));
